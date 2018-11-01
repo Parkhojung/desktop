@@ -1,0 +1,32 @@
+mysql -uroot -p
+Enter password: 111111
+
+CREATE DATABASE opentutorials;
+DROP DATABASE opentutorials;
+
+USE opentutorials;
+
+CREATE TABLE topic(
+	id  INT(11) NOT NULL AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	description TEXT NULL,
+	created DATETIME NOT NULL,
+	author VARCHAR(30) NULL,
+	profile VARCHAR(100) NULL,
+	PRIMARY KEY(id)
+);
+
+SHOW DATABESES;
+SHOW TABLES;
+SHOW topics;
+DESC topics;
+
+SELECT * FROM topic;
+SELECT id,title,created,author FROM topic;
+SELECT id,title,author FROM topic WHERE author='brave' ORDER BY id DESC;
+
+INSERT INTO topic(title,description,created,author,profile) 
+	    VALUES('MySQL', 'MySQL is...', NOW(), 'brave', 'developer');
+
+
+UPDATE topic SET despt='Oracle is ...', title = 'Oracle' WHERE id=2;
